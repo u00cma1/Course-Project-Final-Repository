@@ -11,10 +11,8 @@ Table of Contents:
    4) Sponsor Page
    5) About Us Page
    
-Usage Instructions: 
-
-Contributing to the project: 
+Usage Instructions: The site should be used as eductional bootstrap example. The site has 5 pages that can be navigated to, to see different aspects of bootstrap in action. 
 
 Credits: Author Chad Aufdenberg 
 
-License: 
+License: ecl-2.0
