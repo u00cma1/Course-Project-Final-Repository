@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <style>
+  body
+    {
+      background-image: url(R8.png);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+    }
+  .navbar-default
+    {
+      background:transparent;
+      background-image:none;
+      border-color:transparent;
+      box-shadow:none;
+    }
+  .navbar-collapse
+    {
+      float: left;
+    }
+  h3
+    {
+      color: red;
+      font-size: 2.5em;
+    }
+  p
+    {
+      color: white;
+      text-align: center;
+    }
+  a
+    {
+      color: red;
+    }
+  h2
+    {
+      color: red;
+      font-size: 1.5em;
+    }
+  h1
+    {
+      color: white;
+      font-size: 2em;
+      text-align: center;
+      font-family: serif;
+      font-style: italic;
+    }
+  #brands
+    {
+      float: right;
+      margin: 25px;
+    }
+  #vehicleBox
+    {
+      background-color: transparent;
+      border-radius: 25px;
+      width: 240px;
+      border: 2px solid red;
+      padding: 25px;
+      margin: 25px;
+    }
+  #news
+    {
+      background-color: transparent;
+      border-radius: 25px;
+      width: 240px;
+      border: 2px solid red;
+      padding: 25px;
+      margin: 25px;
+      float: right;
+    }
+  #signature
+    {
+      font-size: 2em;
+      text-align: center;
+      font-family: serif;
+      color: white;
+    }
+  select
+    {
+      background-image: url(vehicleMenu.png);
+      color: white;
+      font-family: monospace;
+      width: 185px;
+      border-radius: 5px;
+      border: 2px solid red;
+    }
+  option
+    {
+      background-color: black;
+    }
+  .buttonA
+    {
+      background-color: #303030;
+      color: white;
+      font-family: monospace;
+      width: 75px;
+      height: 25px;
+      border-radius: 5px;
+    }
+  footer
+    {
+      color: red;
+      text-align: center;
+    }
+  .nav>li>a:focus, .nav>li>a:hover
+    {
+      background-color: #4d4d4d;
+      border-radius: 20px;
+      padding-bottom: 1px;
+    }
+  .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover
+    {
+      background-color: #cc0000;
+      border-radius: 20px;
+      padding-bottom: 1px;
+    }
+  </style>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+
+          <div class="col-md-4">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+           <br><br>
+            <img src="company logo.png" class="rounded mx-auto d-block" alt="logo" width="280px" height="100px"</a>
+        </div>
+          <div class="col-md-4">
+            <br><br>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav nav-pills">
+                <li class="active"><a href="index.html"><img src="Home.png" width="110px" height="60px"></a></li>
+                <li><a href="products.html"><img src="Products.png" width="110px" height="60px"></a></li>
+                <li><a href="gallery.html"><img src="Gallery.png" width="110px" height="60px"></a></li>
+                <li><a href="sponsors.php"><img src="sponsors.png" width="110px" height="60px"></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div id="brands">
+            <img src="brands.png" alt="brands" width="240px" height="100px">
+            </div>
+          </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <h4 id="vehicleBox">
+          <select>
+            <option value="">--YEAR--</option>
+            <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
+          </select>
+          <br><br>
+          <select id="make" onchange="ChangeCarList()">
+              <option value="">--MAKE--</option>
+              <option value="AUDI">AUDI</option>
+              <option value="BENTLEY">BENTLEY</option>
+              <option value="BUGATTI">BUGATTI</option>
+              <option value="LAMBORGHINI">LAMBORGHINI</option>
+              <option value="PORSCHE">PORSCHE</option>
+              <option value="VOLKSWAGEN">VOLKSWAGEN</option>
+          </select>
+            <br><br>
+          <select id="carmodel"><option value="">--MODEL--</option></select>
+              <script>
+              var carsAndModels = {};
+              carsAndModels[''] = ['--MODEL--'];
+              carsAndModels['AUDI'] = ['RS5', 'RS7', 'R8'];
+              carsAndModels['BENTLEY'] = ['CONTINENTAL', 'MULSANNE','FLYING SPUR'];
+              carsAndModels['BUGATTI'] = ['CHIRON','VEYRON', 'EB110'];
+              carsAndModels['LAMBORGHINI'] = ['AVENTADOR','HURACAN', 'URUS'];
+              carsAndModels['PORSCHE'] = ['918','911', 'CAYMAN'];
+              carsAndModels['VOLKSWAGEN'] = ['GTI','GOLF R', 'GLI'];
+              function ChangeCarList()
+              {
+                  var carList = document.getElementById("make");
+                  var modelList = document.getElementById("carmodel");
+                  var selCar = carList.options[carList.selectedIndex].value;
+                  while (modelList.options.length) {
+                      modelList.remove(0);
+                  }
+                  var cars = carsAndModels[selCar];
+                  if (cars)
+                  {
+                      var i;
+                      for (i = 0; i < cars.length; i++)
+                      {
+                          var make = new Option(cars[i], i);
+                          modelList.options.add(make);
+                      }
+                  }
+              }
+              </script>
+              <br><br>
+              <button class="buttonA">SELECT</button>
+          </h4>
+        </div>
+        <div class="col-md-6">
+        <h4 id="news">
+          <p><u> NEWS </u></p>
+          <p>- R8 V10 Twin Turbo Setups</p>
+          <p>-Porsche 918 Stage 3 Tunes</p>
+          <p>-GTI KO4 Turbo Upgrades</p>
+        </h4>
+        </div>
+        <div class="col-md-12">
+          <br><br>
+          <br><br>
+          <br><br>
+          <br><br>
+          <br><br>
+          <br><br>
+          <br><br>
+          <h1>"Auto racing began 5 minutes after the second car was built."</h1>
+          <h4 id="signature">- Henry Ford -</h4>
+        </div>
+          <div class="col-md-12">
+            <footer>
+              <br><br>
+              <a href="mailto:CAMT&amp;P@gmail.com"><u>CONTACT US</u></a>
+              &emsp;
+              <a href="aboutUs.html"> <u>ABOUT US</u></a>
+              <br><br>
+              <a href="https:www.facebook.com"><img src="fb.png" width="40px" height="40px"></a>
+              &emsp;
+              <a href="https:www.twitter.com"><img src="tw.png" width="40px" height="40px"></a>
+              &emsp;
+              <a href="https:www.instagram.com"><img src="ig.png" width="40px" height="40px"></a>
+            </footer>
+          </div>
+      </div>
+    </div>
+</body>
+</html>
